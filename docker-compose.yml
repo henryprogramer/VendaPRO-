@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+
+  desktop:
+    build: ./vendapro-desktop
+    volumes:
+      - ./vendapro-desktop:/app
+    command: python main.py
+
+  server:
+    build: ./vendapro-server
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  web:
+    build: ./vendapro-web
+    ports:
+      - "8080:8080"
+    depends_on:
+      - server
+
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: vendapro
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5432:5432"
