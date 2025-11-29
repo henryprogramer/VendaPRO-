@@ -1,0 +1,9 @@
+#navButton {
+    padding: 12px;
+    text-align: left;
+}
+#cardInfo {
+    border: 1px solid #aaa;
+    padding: 15px;
+    border-radius: 10px;
+}
