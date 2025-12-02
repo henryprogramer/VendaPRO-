@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout
 
-class FuncionarioWindow(QWidget):
+class FuncionariosWindow(QWidget):
     def __init__(self):
         super().__init__()
 
